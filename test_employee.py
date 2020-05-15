@@ -2,11 +2,11 @@
 # -*- coding: utf-8 -*-
 
 import unittest
-# 在Python2.x 中 mock是一个单独模块，需要单独安装。在Python3.x中，mock已经被集成到了unittest单元测试框架中，所以，可以直接使用。
+# python3
 from unittest.mock import patch
+# python2
 #from mock import patch
 from employee import Employee
-from sched import scheduler
 
 
 class TestEmployee(unittest.TestCase):
@@ -57,6 +57,7 @@ class TestEmployee(unittest.TestCase):
         self.assertEqual(self.emp_1.pay, 5250)
         self.assertEqual(self.emp_2.pay, 6300)
 
+    # difficult to understand
     def test_monthly_schedule(self):
         with patch('employee.requests.get') as mocked_get:
             mocked_get.return_value.ok = True
@@ -68,5 +69,4 @@ class TestEmployee(unittest.TestCase):
 
 
 if __name__ == "__main__":
-    #import sys;sys.argv = ['', 'Test.testName']
     unittest.main()

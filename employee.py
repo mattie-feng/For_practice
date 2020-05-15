@@ -1,9 +1,5 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-'''
-装饰器目的是返回一个函数对象，返回语句的对象一定是不带参数的函数名
-@property装饰器，作用是将一个方法变成属性，使用'对象.方法'使用,方法后面不用加()
-'''
 
 import requests
 
@@ -17,6 +13,10 @@ class Employee:
         self.first = first
         self.last = last
         self.pay = pay
+
+    '''
+    @property装饰器，作用是将一个方法变成属性，使用'对象.方法'使用,方法后面不用加()
+    '''
 
     @property
     def email(self):
